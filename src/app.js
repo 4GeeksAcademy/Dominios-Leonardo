@@ -1,10 +1,3 @@
-/* eslint-disable */
-// import "bootstrap";
-// import "./style.css";
-
-// import "./assets/img/rigo-baby.jpg";
-// import "./assets/img/4geeks.ico";
-
 window.onload = function() {
   //Todas las opciones para generar las combinaciones
   let pronombre = ["tu", "mi", "nuestro", "esta"];
@@ -12,10 +5,10 @@ window.onload = function() {
   let sustantivo = ["nube", "sala", "eshop"];
   let dominio = [".com", ".net", ".us", ".io"];
 
-  //Variable donde almacena las combinaciones
+  //Aquí almacena las combinaciones
   let resultados = document.getElementById("combinaciones");
 
-  let lista = resultados.querySelector("select"); // Seleccionar el <select>
+  let lista = resultados.querySelector("select");
   // Genera las combinaciones
   for (let i = 0; i < pronombre.length; i++) {
     for (let j = 0; j < adjetivo.length; j++) {
