@@ -1,10 +1,3 @@
-/* eslint-disable */
-// import "bootstrap";
-// import "./style.css";
-
-// import "./assets/img/rigo-baby.jpg";
-// import "./assets/img/4geeks.ico";
-
 window.onload = function() {
   //Todas las opciones para generar las combinaciones
   let pronombre = ["tu", "mi", "nuestro", "esta"];
@@ -12,21 +5,21 @@ window.onload = function() {
   let sustantivo = ["nube", "sala", "eshop"];
   let dominio = [".com", ".net", ".us", ".io"];
 
-  //Variable donde almacena las combinaciones
-  let resultados = document.getElementById("combinaciones");
+  let paginasWeb = [];
 
-  let lista = resultados.querySelector("select"); // Seleccionar el <select>
-  // Genera las combinaciones
   for (let i = 0; i < pronombre.length; i++) {
     for (let j = 0; j < adjetivo.length; j++) {
       for (let k = 0; k < sustantivo.length; k++) {
         for (let l = 0; l < dominio.length; l++) {
-          let option = document.createElement("option");
-          option.textContent =
-            pronombre[i] + adjetivo[j] + sustantivo[k] + dominio[l];
-          lista.appendChild(option); // Añadir el <option> al <select>
+          paginasWeb.push(
+            pronombre[i] + adjetivo[j] + sustantivo[k] + dominio[l]
+          );
         }
       }
     }
   }
+  let result = paginasWeb.map(option => {
+    return `<option>${option}</option>`;
+  });
+  document.getElementById("combinaciones").innerHTML = result;
 };
